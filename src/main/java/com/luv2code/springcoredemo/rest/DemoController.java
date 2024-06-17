@@ -13,7 +13,7 @@ public class DemoController {
     private Coach myCoach;
 
     @Autowired
-    public DemoController(@Qualifier("baseballCoach") Coach coach){
+    public DemoController(Coach coach){
         this.myCoach = coach;
     }
 
