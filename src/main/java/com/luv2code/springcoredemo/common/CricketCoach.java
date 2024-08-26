@@ -9,16 +9,6 @@ import org.springframework.stereotype.Component;
 @Component
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class CricketCoach implements Coach{
-    @PostConstruct
-    public void doStartUpStuff(){
-        System.out.println("In doStartUpStuff(): " + getClass().getSimpleName());
-    }
-
-    @PreDestroy
-    public void doCleanUpStuff(){
-        System.out.println("In doCleanUpStuff(): " + getClass().getSimpleName());
-    }
-
     public CricketCoach(){
         System.out.println("In "+getClass().getSimpleName() + " constructor.");
     }
