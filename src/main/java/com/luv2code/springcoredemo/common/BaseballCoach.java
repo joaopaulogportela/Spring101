@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Primary
-@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class BaseballCoach implements Coach{
     public BaseballCoach(){
         System.out.println("In "+getClass().getSimpleName() + " constructor.");

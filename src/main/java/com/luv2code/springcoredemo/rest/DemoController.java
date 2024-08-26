@@ -12,23 +12,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController {
     // define private field for dependency
     private Coach myCoach;
-    private Coach anotherCoach;
 
     @Autowired
-    public DemoController(@Qualifier("baseballCoach") Coach coach,
-                          @Qualifier("baseballCoach") Coach anotherCoach){
+    public DemoController(@Qualifier("cricketCoach") Coach coach){
         System.out.println("In "+getClass().getSimpleName() + " constructor.");
         this.myCoach = coach;
-        this.anotherCoach = anotherCoach;
     }
 
     @GetMapping("/dailyworkout")
     public String getDailyWorkout(){
         return myCoach.getDailyWorkout();
-    }
-
-    @GetMapping("/check")
-    public String check(){
-        return "Checking if the Variables myCoach and anotherCoach point to the same instance: " + (myCoach==anotherCoach);
     }
 }
